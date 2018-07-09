@@ -5,7 +5,8 @@ const OH = `<tspan xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sod
 
 
 
-const clearBoard = (board) => {
+const clearBoard = () => {
+    const board = document.querySelectorAll('.piece')
     for (let i = 0; i < board.length; i++) {
       board.item(i).innerHTML = '<div></div>'
     }
@@ -18,13 +19,11 @@ const clearBoard = (board) => {
   
   // clear the board, populate the game object with players
   const startGame = () => {
-  
-    let board = document.querySelectorAll('.piece')
     let form = document.querySelectorAll('.player-form');
     let p1 = document.getElementById('p1');
     let p2 = document.getElementById('p2');
   
-    clearBoard(board);
+    clearBoard();
     game.p1 = p1.value;
     game.p2 = p2.value;
     p2.value = '';

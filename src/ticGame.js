@@ -9,7 +9,7 @@ class TicGame {
       this.p2Board = [];
       this.message = "Enter Player Names and Click Submit to Start"
       this.winState = { 1 : [0,1,2],
-                                          2 : [3,4,5],
+                        2 : [3,4,5],
                         3 : [6,7,8],
                         4 : [0,3,6],
                         5 : [1,4,7],
@@ -22,14 +22,19 @@ class TicGame {
     takeTurn(e) {
       this.fillSquare(e);
       let space = parseInt(e.id[e.id.length - 1]);
+      let nextPlayer = this.currentTurn === 'x' ? this.p2 : this.p1
       if (this.currentTurn === 'x') {
         this.p1Board.push(space)
+        game.updateMessage(`It's ${nextPlayer}'s turn`);
         this.gameEnd(this.p1Board)
       } else {
         this.p2Board.push(space);
+        game.updateMessage(`It's ${nextPlayer}'s turn`);
         this.gameEnd(this.p2Board)
       }
       this.currentTurn === 'x' ? this.currentTurn = 'o' : this.currentTurn = 'x';
+     
+    
     }
   
     fillSquare(e) {
@@ -47,6 +52,7 @@ class TicGame {
        if(win === true) {
        this.p1Board = [];
        this.p2Board = [];
+       clearBoard()
        this.updateMessage(`${name} wins!  Play again?`)
        }
        
