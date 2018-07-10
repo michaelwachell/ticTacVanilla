@@ -40,20 +40,20 @@ class TicGame {
     fillSquare(e) {
       let mark = this.currentTurn === 'x' ? EX : OH;
       e.innerHTML = mark;
-  
     }
   
     gameEnd(board) {
         let name = this.currentTurn === 'x' ? this.p1 : this.p2 ;
       for (let key in this.winState) {
-       let win = this.winState[key].every((num)=> {
-           return board.indexOf(num) !== -1;
+       let win = this.winState[key].every((boardPosition)=> {
+           return board.indexOf(boardPosition) !== -1;
        });
        if(win === true) {
        this.p1Board = [];
        this.p2Board = [];
        clearBoard()
-       this.updateMessage(`${name} wins!  Play again?`)
+       this.updateMessage(`${name} wins!  Play again?`);
+       this.currentTurn = 'x';
        }
        
        
