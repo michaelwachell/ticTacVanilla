@@ -1,6 +1,6 @@
 * {
-  box-sizing: border-box;
-  font-family: sans-serif;
+  /* box-sizing: border-box; */
+  font-family: Cormorant Garamond;
 }
 
 body {
@@ -8,21 +8,23 @@ body {
   /* display: flex; */
   justify-content: center;
   flex-direction: column;
+  text-align: center;
 }
 
 .board {
-  width: 300px;
-  height: 300px;
+
   display: grid;
   grid-template-columns: 10vw 10vw 10vw;
   grid-gap: 0px;
-  text-align: center;
+  justify-content:center; 
+  margin-top: 4vh;
+ 
 }
 
 #tic-tac-toe {
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: space-evenly;
   flex-direction: column;
   text-align: center;
 }
@@ -41,7 +43,11 @@ body {
   vertical-align: middle;
   text-align: center;
   font-size: 2em;
-  width: 100%;
+  min-width: 100px;
+  min-height: 100px;
+  max-width: 200px;
+  max-height: 200px;
+
 }
 
 .board div:nth-child(n + 4) {
@@ -58,4 +64,21 @@ body {
   flex-direction: column;
   justify-content: center;
   width: 100%;
+}
+
+.growUp {
+
+  -webkit-animation: growUp 1s;
+  animation: growUp 1s;
+
+}
+
+@keyframes growUp {
+  from {font-size: 0;} 
+  to {font-size: 2em;}
+}
+
+@-webkit-keyframes growUp {
+  from {font-size: 0; opacity: 0;} 
+  to {font-size: 2em; opacity: 1;}
 }
