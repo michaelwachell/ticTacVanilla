@@ -1,0 +1,30 @@
+.cloud {
+  max-width: 400px;
+  min-width: 100px;
+  height: auto;
+  -webkit-animation: float 60s;
+  animation: float 60s;
+  position: absolute;
+  z-index: -1; 
+  left: 0%;
+  -webkit-animation: float, fadein 2s;
+  animation: float 60s;
+}
+
+@keyframes float {
+  from {
+    transform: translateX('0%')
+  }
+  to {
+    transform: translateX('100%')
+  }
+}
+
+@-webkit-keyframes float {
+    from {
+        transform: translateX('0%')
+    }
+    to {
+        transform: translateX('100%')
+    }
+  }

@@ -5,8 +5,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="index.css">
-  <link rel="stylesheet" type="text/css" href="snackbar.css">
+  <link rel="stylesheet" type="text/css" href="./styles/reset.css">
+  <link rel="stylesheet" type="text/css" href="./styles/index.css">
+  <link rel="stylesheet" type="text/css" href="./styles/snackbar.css">
+  <link rel="stylesheet" type="text/css" href="./styles/scenery.css">
+  <link rel="stylesheet" type="text/css" href="./styles/collapse.css">
+
+
   <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond|Eczar|Gentium+Basic|Libre+Baskerville|Libre+Franklin|Proza+Libre|Rubik|Taviraj|Trirong|Work+Sans" rel="stylesheet">
 
 
@@ -14,15 +19,17 @@
 </head>
 
 <body>
-  <div width="10%"><img class="cloud" src="https://image.flaticon.com/icons/svg/20/20095.svg"></div>
+    <div  class="cloud" ><img src="./assets/cloud.svg"></div>
   <div id="tic-tac-toe">
+      
     <div class="status">
       <h1>Welcome To Tic Tac Toe</h1>
     </div>
     <div>
       <h2 id="message">Enter Player Names Or Click Start</h2>
     </div>
-    <div>
+    <button class="collapsible">Enter Player Names</button>
+    <div class="options">
       <form class="player-form">
         <div>
           <input id="p1" type="text" name='player 1' placeholder="Player 1" />
@@ -49,8 +56,8 @@
       <div onclick="game.takeTurn(this)" class="piece" id="piece-8"></div>
     </div>
 
-<div class="fadeIn"><img src="http://www.dxbmarine.com/wp-content/uploads/2013/09/Resort-11.png"/></div>
-<div>
+<!-- <div class="fadeIn"><img src="http://www.dxbmarine.com/wp-content/uploads/2013/09/Resort-11.png"/></div>
+<div> -->
 
 </div>
   </div>
