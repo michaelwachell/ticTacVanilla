@@ -95,3 +95,7 @@ body {
   from {font-size: 0; opacity: 0;} 
   to {font-size: 2em; opacity: 1;}
 }
+
+.marginTopBottom {
+  margin: 2vw 0 2vw 0;
+}
