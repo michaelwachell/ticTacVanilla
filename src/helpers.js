@@ -1,8 +1,18 @@
 import
 TicGame
 from './ticGame';
+function ready(fn) {
+  if (document.readyState != 'loading'){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+}
 
-let game = new TicGame()
+ready(function() {
+  let game = new TicGame();
+})
+
 
 
 const EX = `<div>X</div>`;
@@ -54,5 +64,6 @@ export {
   snackBar,
   startGame,
   clearBoard,
-  bonk
+  bonk,
+  ready
 }
