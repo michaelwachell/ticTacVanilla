@@ -1,4 +1,10 @@
-class TicGame {
+import {startGame, clearBoard, snackBar, bonk} from './helpers.js'; 
+
+
+
+
+
+export default class TicGame {
 
   constructor(player1, player2) {
 
@@ -31,12 +37,12 @@ class TicGame {
     if (this.currentTurn === 'x' && filled) {
       this.fillSquare(e);
       this.p1Board.push(space)
-      game.updateMessage(`It's ${nextPlayer}'s turn`);
+      this.updateMessage(`It's ${nextPlayer}'s turn`);
       this.gameEnd(this.p1Board)
     } else if (filled) {
       this.fillSquare(e);
       this.p2Board.push(space);
-      game.updateMessage(`It's ${nextPlayer}'s turn`);
+      this.updateMessage(`It's ${nextPlayer}'s turn`);
       this.gameEnd(this.p2Board)
     }
     this.currentTurn === 'x' ? this.currentTurn = 'o' : this.currentTurn = 'x';
@@ -50,25 +56,25 @@ class TicGame {
     e.classList.add('growUp')
     e.innerHTML = mark
     setTimeout(function(){ e.classList.remove('growUp');
-  console.log(e) }, 1000);
+    console.log(e) }, 1000);
 
   }
 
   gameEnd(board) {
     let name = this.currentTurn === 'x' ? this.p1 : this.p2;
-    let names = [game.p1, game.p2];
+    let names = [this.p1, this.p2];
     for (let key in this.winState) {
       let win = this.winState[key].every((boardPosition) => {
         return board.indexOf(boardPosition) !== -1;
       });
       if (win === true) {
         snackBar(`${name} wins!  Play again?`);
-        startGame(game.p1, game.p2);
+        startGame(this.p1, this.p2);
       }
 
-      if (game.turnCount === 8) {
+      if (this.turnCount === 8) {
         snackBar(`It's a draw!  Play again?`);
-        startGame(game.p1, game.p2)
+        startGame(this.p1, this.p2)
       }
 
 
@@ -87,4 +93,12 @@ class TicGame {
 }
 
 // instantiate new game
-let game = new TicGame()
+
+
+
+
+
+
+
+
+

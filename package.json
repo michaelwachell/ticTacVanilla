@@ -2,10 +2,18 @@
   "name": "tictac",
   "version": "1.0.0",
   "description": "vanillaish tic tac toe",
-  "main": "index.js",
+  "main": "./src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "webpack --config webpack.config.js --watch"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "michael wachell",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-jest": "^23.4.0",
+    "node": "^10.6.0",
+    "webpack": "^4.16.0"
+  }
+
 }

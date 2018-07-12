@@ -1,3 +1,10 @@
+import
+TicGame
+from './ticGame';
+
+let game = new TicGame()
+
+
 const EX = `<div>X</div>`;
 const OH = `<div>O</div>`;
 
@@ -16,12 +23,12 @@ const clearBoard = () => {
 const startGame = (player1, player2) => {
   let p1 = document.getElementById("p1");
   let p2 = document.getElementById("p2");
-  game = new TicGame();
-
+  if (!!game) {
+    game = new TicGame(game.p1, game.p2)
+  } else {
+    let game = new TicGame(p1.value, p2.value)
+  };
   clearBoard();
-  game.p1 = p1.value || player1 || "Player 1";
-  game.p2 = p2.value || player2 || "Player 2";
-  console.log(game)
   p2.value = "";
   p1.value = "";
   game.updateMessage(`It's ${game.p1}'s turn`);
@@ -29,9 +36,23 @@ const startGame = (player1, player2) => {
 
 const snackBar = (message) => {
 
- var x = document.getElementById("snackbar");
- x.innerText = message;
- x.className = "show";
- setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+  var x = document.getElementById("snackbar");
+  x.innerText = message;
+  x.className = "show";
+  setTimeout(function () {
+    x.className = x.className.replace("show", "");
+  }, 3000);
 
+}
+
+const bonk = (n) => {
+  return 2 * n;
+}
+
+
+export {
+  snackBar,
+  startGame,
+  clearBoard,
+  bonk
 }
